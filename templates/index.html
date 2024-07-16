@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia AES</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1d1f21;
+            color: #c5c8c6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #81a2be;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #282a2e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        textarea, input[type="password"], select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #373b41;
+            border: none;
+            color: #c5c8c6;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #81a2be;
+            color: #1d1f21;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5f819d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criptografia AES</h1>
+    <form action="{{ url_for('process') }}" method="POST">
+        <label for="mode">Modo:</label>
+        <select name="mode" id="mode">
+            <option value="1">Criptografar</option>
+            <option value="2">Descriptografar</option>
+        </select>
+        <label for="text">Texto:</label>
+        <textarea name="text" id="text" rows="4" cols="50"></textarea>
+        <label for="password">Senha:</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Processar</button>
+    </form>
+</body>
+</html>
